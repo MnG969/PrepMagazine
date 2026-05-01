@@ -35,12 +35,12 @@ function prevPage() {
 
 // ZOOM
 function zoomIn() {
-  zoom += 0.1;
+  zoom = Math.min(2, zoom + 0.1);
   document.getElementById("book").style.transform = `scale(${zoom})`;
 }
 
 function zoomOut() {
-  zoom -= 0.1;
+  zoom = Math.max(0.5, zoom - 0.1);
   document.getElementById("book").style.transform = `scale(${zoom})`;
 }
 
