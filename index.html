@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ing">
+<head>
+  <meta charset="UTF-8">
+  <title>PrepMagazine</title>
+
+  <!-- mobil uyum -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- stil -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ÜST BAR -->
+<div class="top-bar">
+  <button onclick="prevPage()">◀</button>
+  <button onclick="nextPage()">▶</button>
+  <button onclick="zoomIn()">🔍+</button>
+  <button onclick="zoomOut()">🔍-</button>
+</div>
+
+<!-- KİTAP -->
+<div id="book"></div>
+
+<!-- KÜTÜPHANE -->
+<script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
