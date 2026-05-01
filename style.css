@@ -24,10 +24,3 @@ button {
   max-width: 900px;
   height: 90vh;
 }
-
-/* mobil için */
-@media (max-width: 768px) {
-  #book {
-    height: 100vh;
-  }
-}
