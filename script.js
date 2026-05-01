@@ -7,12 +7,15 @@ const pageFlip = new St.PageFlip(
     height: 600,
     size: "stretch",
     maxShadowOpacity: 0.5,
+
     showCover: true,
+    usePortrait: true,
     mobileScrollSupport: true
   }
 );
 
 let pages = [];
+
 
 // SAYFA SAYINI BURADA AYARLA
 for (let i = 1; i <= 30; i++) {
@@ -40,3 +43,15 @@ function zoomOut() {
   zoom -= 0.1;
   document.getElementById("book").style.transform = `scale(${zoom})`;
 }
+
+document.addEventListener("keydown", function(e) {
+
+  if (e.key === "ArrowRight") {
+    pageFlip.flipNext();
+  }
+
+  if (e.key === "ArrowLeft") {
+    pageFlip.flipPrev();
+  }
+
+});
