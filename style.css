@@ -6,7 +6,7 @@ body {
   align-items: center;
 }
 
-/* üst bar sabit kalmalı */
+
 .top-bar {
   position: sticky;
   top: 0;
@@ -24,7 +24,7 @@ button {
   cursor: pointer;
 }
 
-/* kritik: zoom alanı */
+
 .viewer {
   width: 100%;
   height: 90vh;
@@ -34,7 +34,7 @@ button {
   align-items: flex-start;
 }
 
-/* kitap */
+
 #book {
   width: 100%;
   max-width: 900px;

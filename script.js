@@ -17,14 +17,14 @@ const pageFlip = new St.PageFlip(
 let pages = [];
 
 
-// SAYFA SAYINI BURADA AYARLA
+
 for (let i = 1; i <= 30; i++) {
   pages.push(`pages/${i}.jpg`);
 }
 
 pageFlip.loadFromImages(pages);
 
-// BUTONLAR
+// buton işte
 function nextPage() {
   pageFlip.flipNext();
 }
@@ -33,7 +33,7 @@ function prevPage() {
   pageFlip.flipPrev();
 }
 
-// ZOOM
+
 function zoomIn() {
   zoom = Math.min(2, zoom + 0.1);
   document.getElementById("book").style.transform = `scale(${zoom})`;
