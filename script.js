@@ -19,7 +19,7 @@ let pages = [];
 
 
 
-for (let i = 0; i <= 30; i++) {
+for (let i = 1; i <= 30; i++) {
   pages.push(`pages/${i}.jpg`);
 }
 
@@ -65,5 +65,7 @@ function openBook() {
   setTimeout(() => {
     cover.style.display = "none";
     document.getElementById("book").style.display = "block";
+
+    document.body.focus();
   }, 1000);
 }
