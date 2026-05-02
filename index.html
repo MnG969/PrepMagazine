@@ -9,26 +9,59 @@
 
   
   <link rel="stylesheet" href="style.css">
+
+  <style>
+body {
+  margin: 0;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#cover {
+  perspective: 1200px;
+}
+
+#cover img {
+  width: 300px;
+  cursor: pointer;
+  transform-origin: left;
+  transition: transform 1s ease;
+}
+
+.opening img {
+  transform: rotateY(-120deg);
+}
+</style>
 </head>
+
 <body>
 
-
-<div class="top-bar">
-  <button onclick="prevPage()">◀</button>
-  <button onclick="nextPage()">▶</button>
-  <button onclick="zoomIn()">🔍+</button>
-  <button onclick="zoomOut()">🔍-</button>
+<div id="cover">
+  <img src="pages/1.jpg" id="coverImg">
 </div>
 
+<script>
+function openBook() {
+  const cover = document.getElementById("cover");
+  cover.classList.add("opening");
 
-<div id="book" style="display:none;"></div>
+  setTimeout(() => {
+    window.location.href = "reader.html";
+  }, 900);
+}
 
-<div id="book"></div>
+document.getElementById("coverImg").addEventListener("click", openBook);
 
-<script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
-
-
-<script src="script.js"></script>
+document.addEventListener("keydown", function(e) {
+  if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+    openBook();
+  }
+});
+</script>
 
 </body>
 </html>
