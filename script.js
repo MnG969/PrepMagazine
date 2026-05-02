@@ -1,29 +1,34 @@
 document.getElementById("book").style.display = "none";
 let zoom = 1;
 
-const pageFlip = new St.PageFlip(
-  document.getElementById("book"),
-  {
+let pageFlip;
+
+function loadBook() {
+
+  const container = document.getElementById("book");
+  container.innerHTML = "";
+
+  pageFlip = new St.PageFlip(container, {
     width: 400,
     height: 600,
     size: "stretch",
     maxShadowOpacity: 0.5,
-
     showCover: true,
-    usePortrait: true,
+    usePortrait: window.innerWidth < 768,
     mobileScrollSupport: true
+  });
+
+  let pages = [];
+
+  // 👇 0'DAN BAŞLIYORUZ (ÇOK ÖNEMLİ)
+  for (let i = 0; i <= 30; i++) {
+    pages.push(`pages/${i}.jpg`);
   }
-);
 
-let pages = [];
-
-
-
-for (let i = 1; i <= 30; i++) {
-  pages.push(`pages/${i}.jpg`);
+  pageFlip.loadFromImages(pages);
 }
 
-pageFlip.loadFromImages(pages);
+loadBook();
 
 // buton işte
 function nextPage() {
@@ -58,14 +63,10 @@ document.addEventListener("keydown", function(e) {
 });
 
 function openBook() {
-  const cover = document.getElementById("cover");
-
-  cover.classList.add("opening");
+  document.getElementById("cover").style.display = "none";
+  document.getElementById("book").style.display = "block";
 
   setTimeout(() => {
-    cover.style.display = "none";
-    document.getElementById("book").style.display = "block";
-
-    document.body.focus();
-  }, 1000);
+    pageFlip.flip(1);
+  }, 100);
 }
