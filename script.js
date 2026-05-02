@@ -1,3 +1,4 @@
+document.getElementById("book").style.display = "none";
 let zoom = 1;
 
 const pageFlip = new St.PageFlip(
@@ -55,3 +56,14 @@ document.addEventListener("keydown", function(e) {
   }
 
 });
+
+function openBook() {
+  const cover = document.getElementById("cover");
+
+  cover.classList.add("opening");
+
+  setTimeout(() => {
+    cover.style.display = "none";
+    document.getElementById("book").style.display = "block";
+  }, 1000);
+}

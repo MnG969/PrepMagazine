@@ -40,3 +40,28 @@ button {
   max-width: 900px;
   transform-origin: top center;
 }
+
+#cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#coverImg {
+  width: 300px;
+  transition: transform 1s ease;
+  transform-origin: left;
+}
+
+
+.opening #coverImg {
+  transform: rotateY(-120deg);
+}
