@@ -1,34 +1,26 @@
-document.getElementById("book").style.display = "none";
 let zoom = 1;
 
-let pageFlip;
-
-function loadBook() {
-
-  const container = document.getElementById("book");
-  container.innerHTML = "";
-
-  pageFlip = new St.PageFlip(container, {
+const pageFlip = new St.PageFlip(
+  document.getElementById("book"),
+  {
     width: 400,
     height: 600,
     size: "stretch",
     maxShadowOpacity: 0.5,
+
     showCover: true,
     usePortrait: window.innerWidth < 768,
     mobileScrollSupport: true
-  });
-
-  let pages = [];
-
-  // 👇 0'DAN BAŞLIYORUZ (ÇOK ÖNEMLİ)
-  for (let i = 0; i <= 30; i++) {
-    pages.push(`pages/${i}.jpg`);
   }
+);
 
-  pageFlip.loadFromImages(pages);
+let pages = [];
+
+for (let i = 0; i <= 30; i++) {
+  pages.push(`pages/${i}.jpg`);
 }
 
-loadBook();
+pageFlip.loadFromImages(pages);
 
 // buton işte
 function nextPage() {
@@ -61,12 +53,3 @@ document.addEventListener("keydown", function(e) {
   }
 
 });
-
-function openBook() {
-  document.getElementById("cover").style.display = "none";
-  document.getElementById("book").style.display = "block";
-
-  setTimeout(() => {
-    pageFlip.flip(1);
-  }, 100);
-}
