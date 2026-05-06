@@ -2,66 +2,11 @@
 <html lang="ing">
 <head>
   <meta charset="UTF-8">
-  <title>PrepMagazine</title>
-
- 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-body {
-  margin: 0;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#cover {
-  perspective: 1200px;
-}
-
-#cover img {
-  width: 300px;
-  cursor: pointer;
-  transform-origin: left;
-  transition: transform 1s ease;
-}
-
-.opening img {
-  transform: rotateY(-120deg);
-}
-</style>
+  <title>PrepMagazine</title>
+  <script>
+    window.location.replace("reader.html");
+  </script>
 </head>
-
-<body>
-
-<div id="cover">
-  <img src="pages/0.jpg" id="coverImg">
-</div>
-
-<script>
-function openBook() {
-  const cover = document.getElementById("cover");
-  cover.classList.add("opening");
-
-  setTimeout(() => {
-    window.location.href = "reader.html";
-  }, 900);
-}
-
-document.getElementById("coverImg").addEventListener("click", openBook);
-
-document.addEventListener("keydown", function(e) {
-  if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-    openBook();
-  }
-});
-</script>
-
-</body>
+<body></body>
 </html>
