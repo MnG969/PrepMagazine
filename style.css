@@ -28,7 +28,7 @@ button {
 .viewer {
   width: 100%;
   height: 90vh;
-  overflow: auto; /* taşmayı kontrol eder */
+  overflow: auto; 
   display: flex;
   justify-content: center;
   align-items: flex-start;
