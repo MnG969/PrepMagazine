@@ -4,7 +4,7 @@ const book = document.getElementById("book");
 
 const isMobile = window.innerWidth < 768;
 
-for (let i = 2; i <= 30; i++) {
+for (let i = 2; i <= 25; i++) {
   const div = document.createElement("div");
   div.className = "page";
   div.innerHTML = `<img src="./pages/${i}.jpg">`;
